@@ -1,0 +1,17 @@
+To avoid this issue, make sure all classes used with `@apply` are correctly defined in your Tailwind configuration or that you have added them as custom classes.   You might add a custom build process or linting step to check that all classes used in `@apply` exist.  One approach is to generate a list of all defined classes from your Tailwind config and compare it against those used in `@apply` statements.
+
+Here's how you could implement a simple check within the `bugSolution.html` file:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tailwind CSS @apply Fix</title>
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <p class="text-green-500">This text is green because the class exists</p>
+  <p>This text is styled by an @apply directive checking for the class existance</p>
+</body>
+</html>
+```
